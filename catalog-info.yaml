@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kqrf95rcy-go-gitops
+  description: This is GitOps manifest for kqrf95rcy-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=kqrf95rcy-go
+    backstage.io/kubernetes-id: kqrf95rcy-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: kqrf95rcy-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kqrf95rcy-go
